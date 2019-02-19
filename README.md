@@ -32,10 +32,12 @@ You should hear the remote stream through the audio element.
 ## Actual results
 Most of the time you'll get audio, but sometimes you won't. The audio element is playing and the audio track is in the correct state but you can't hear anything.
 
-You may need to try this multiple times to experience the issue. I have been zooming in/out and changing the viewport location between tests but I'm not sure if that actually does anything.
+You may need to try this multiple times to experience the issue. It sometimes work fine for me 5-10 times in a row. I have been zooming in/out and changing the viewport location between tests to try and make it happen more often. But I'm not sure if that actually does anything.
 
 The issue seems to stop if you uncomment this line from the index.html
-```<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->```
+```html
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+```
 
 ## Gotchas
 - The websocket used to connect to ngrok will disconnect from time to time. So if you see a log about the socket disconnected, just refresh the page.

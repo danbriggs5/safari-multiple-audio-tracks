@@ -89,9 +89,8 @@ function subscribe(offer) {
 			setInterval(() => {
 				console.log('Viewer state', {
 					audioElementPaused: audio.paused,
+					audioElementVolume: audio.volume,
 					audioTrack: e.streams[0].getAudioTracks()[0],
-					videoElementPaused: video.paused,
-					videoTrack: e.streams[0].getVideoTracks()[0],
 				});
 			}, 10000);
 		}
@@ -118,14 +117,14 @@ function subscribe(offer) {
 }
 
 function grantPermissions() {
+	// Call gum() to get camera access then stop the tracks immediately
 	return navigator.mediaDevices
 		.getUserMedia({ audio: true, video: true })
 		.then(mediaStream => mediaStream.getTracks().forEach(t => t.stop()))
-		.catch(err => console.error('Capture', err));
+		.catch(err => console.error('Grant permissions', err));
 }
 
 function createViewer() {
-	publishBtn.disabled = true;
 	viewBtn.disabled = true;
 
 	const subs = {};
@@ -205,7 +204,6 @@ function createPublisher() {
 		.getUserMedia({ audio: true, video: true })
 		.then(mediaStream => {
 			publishBtn.disabled = true;
-			viewBtn.disabled = true;
 
 			const pubs = {};
 

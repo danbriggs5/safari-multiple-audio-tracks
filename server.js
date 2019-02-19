@@ -38,9 +38,7 @@ const PORT = 8888;
 					console.warn("Receiver doesn't exist", { receiver: msg.to });
 				}
 			} else {
-				Object.keys(sockets)
-					.filter(i => i !== socketId)
-					.forEach(i => sockets[i].send(json));
+				Object.keys(sockets).forEach(i => sockets[i].send(json));
 			}
 		});
 
