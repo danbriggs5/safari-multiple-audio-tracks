@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<title>Autoplay</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/6.3.2/adapter.min.js"></script>
+</head>
+<body>
+    <div id="videoRow">
+        <!-- Videos will be added dynamically -->
+    </div>
+	<div>
+        <button id="publish">Publish</button>
+        <button id="view">View</button>
+	</div>
+<script type="text/javascript" src="./index.js"></script>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+    #videoRow {
+        width: 100%;
+        min-height: 180px;
+    }
+	video {
+		width: 320px;
+		height: 180px;
+		background-color: #000;
+	}
+    button {
+        display: block;
+        height: 50px;
+        width: 300px;
+        background: #794fff;
+	    color: #fff;
+        margin-bottom: 32px;
+    }
+    button:disabled {
+        opacity: 0.4;
+    }
+</style>
+</html>
