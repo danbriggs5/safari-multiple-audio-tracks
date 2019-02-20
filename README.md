@@ -9,6 +9,7 @@ To repro and issue where Safari has trouble playing multiple audio tracks. See h
 ## Getting started
 ```shell
 git clone git@github.com:danbriggs5/safari-multiple-audio-tracks.git
+cd safari-multiple-audio-tracks
 npm install
 npm run start
 ```
